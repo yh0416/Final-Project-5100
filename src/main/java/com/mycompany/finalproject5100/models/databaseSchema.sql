@@ -13,6 +13,7 @@ CREATE TABLE users(
     emailAddress VARCHAR(100) NOT NULL,
     password VARCHAR(255) NOT NULL,
     userRole VARCHAR(50) NOT NULL,
+    address VARCHAR(100) NOT NULL,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -26,13 +27,17 @@ CREATE TABLE products(
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE orders(
+CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customerName VARCHAR(100) NOT NULL,
     customerPhone VARCHAR(20) NOT NULL,
     customerAddress VARCHAR(255) NOT NULL,
-    delivery_fee DOUBLE NOT NULL,
-    status VARCHAR(50),
+    deliveryFee DOUBLE NOT NULL,
+    status VARCHAR(50),  
+    deliveryStatus VARCHAR(50),
+    deliveryResponse VARCHAR(255), 
+    deliveryTime VARCHAR(100),
+    assignedTo VARCHAR(100), 
     createdBy VARCHAR(100),
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -45,13 +50,12 @@ CREATE TABLE order_items(
     FOREIGN KEY (orderId) REFERENCES orders(id)
 );
 
-CREATE TABLE deliveries(
+
+CREATE TABLE delivery_timeline (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    orderId INT,
-    deliberyStatus VARCHAR(50),
-    deliveryNotes VARCHAR(255),
-    fee_earned DOUBLE NOT NULL,
-    assignedTo INT,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-    
+    orderId INT NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    deliveryResponse VARCHAR(255) DEFAULT NULL,
+    FOREIGN KEY (orderId) REFERENCES orders(id)
 );
