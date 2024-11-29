@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.finalproject5100.controller.SignUpController"
+      styleClass="main-container">
+    
+    <!-- Left side - Image -->
+    <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+        <ImageView fitWidth="500" fitHeight="400" preserveRatio="true">
+            <Image url="@images/image.png"/>
+        </ImageView>
+    </VBox>
+    
+ 
+    <!-- Right side - Form -->
+    <VBox spacing="20" maxWidth="450" styleClass="form-container">
+        <padding>
+            <Insets top="40" right="50" bottom="40" left="50"/>
+        </padding>
+        
+        <Text text="Create your account" styleClass="title"/>
+        
+        <VBox spacing="15">
+            <VBox spacing="8">
+                <Label text="Email Address" styleClass="field-label"/>
+                <TextField fx:id="emailField" 
+                           promptText="Enter your email"
+                           styleClass="input-field"/>
+                <Label fx:id="emailError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label text="Password" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField"
+                               promptText="Enter your password"
+                               styleClass="input-field"/>
+                <Label fx:id="passwordError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label text="Confirm Password" styleClass="field-label"/>
+                <PasswordField fx:id="confirmPasswordField"
+                               promptText="Confirm your password"
+                               styleClass="input-field"/>
+                <Label fx:id="confirmPasswordError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label text="Role" styleClass="field-label"/>
+                <ComboBox fx:id="roleComboBox"
+                          promptText="Select Role"
+                          maxWidth="Infinity"
+                          styleClass="input-field"/>
+                <Label fx:id="roleError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+              <!--the address-->
+            <VBox spacing="8">
+                <Label text="Address" styleClass="field-label"/>
+                <TextField fx:id="addressField"
+                           promptText="Enter your address"
+                           styleClass="input-field"/>
+                <Label fx:id="addressError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <CheckBox fx:id="termsCheckBox" 
+                          text="I agree to Terms and Privacy Policy" 
+                          styleClass="terms-checkbox"/>
+                <Label fx:id="termsError" 
+                       styleClass="error-label"
+                       visible="false"/>
+            </VBox>
+          
+    
+            
+            <Button text="Sign Up"
+                    onAction="#handleSignUp"
+                    styleClass="login-button"
+                    maxWidth="Infinity"/>
+                    
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Already have an account?" styleClass="signup-text"/>
+                <Hyperlink text="Log in" 
+                           onAction="#switchToLogin"
+                           styleClass="signup-link"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</HBox>
