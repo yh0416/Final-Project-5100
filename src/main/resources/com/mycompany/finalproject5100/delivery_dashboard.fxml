@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.finalproject5100.controller.DeliveryDashboardController"
+            prefWidth="1200"
+            prefHeight="800"
+            styleClass="dashboard-container">
+            
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            <Button text="Dashboard" styleClass="nav-link-active"/>
+            <Button text="Products" styleClass="nav-link"/>
+            <Button text="Orders" styleClass="nav-link"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="dashboard-content">
+            <VBox spacing="30">
+                <padding>
+                    <Insets top="30" right="40" bottom="30" left="40"/>
+                </padding>
+
+                <Label text="Welcome back!" styleClass="welcome-text"/>
+
+                <!-- Statistics Cards -->
+                <HBox spacing="20">
+                    <VBox styleClass="stat-card">
+                        <Label text="$1000" styleClass="stat-value"/>
+                        <Label text="Total Sales" styleClass="stat-label"/>
+                    </VBox>
+
+                    <VBox styleClass="stat-card">
+                        <Label text="200" styleClass="stat-value"/>
+                        <Label text="Products" styleClass="stat-label"/>
+                    </VBox>
+
+                    <VBox styleClass="stat-card">
+                        <Label text="20" styleClass="stat-value"/>
+                        <Label text="Pending Orders" styleClass="stat-label"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Latest Deliveries -->
+                <VBox spacing="10">
+                    <Label text="Latest Deliveries" styleClass="section-title"/>
+                    <GridPane fx:id="latestDeliveriesGrid" styleClass="deliveries-grid" vgap="10" hgap="10"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
