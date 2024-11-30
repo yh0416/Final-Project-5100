@@ -4,8 +4,10 @@
  */
 package com.mycompany.finalproject5100.controllers;
 
+import com.mycompany.finalproject5100.App;
 import com.mycompany.finalproject5100.models.Delivery;
 import com.mycompany.finalproject5100.models.dbUtils;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -104,6 +106,34 @@ public class DeliveryDashboardController {
         String query = "SELECT COUNT(*) AS total FROM orders WHERE deliveryStatus ='Pending'";
         ResultSet rs = db.fetch(query);
         return rs.next()?rs.getInt("total"):0;
+    }
+    
+    @FXML
+    private void handleLogout() throws Exception {
+        try {
+            App.setRoot("login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+ 
+    }
+    
+     @FXML
+    private void navigateToDeliveries() throws Exception {
+        try {
+            App.setRoot("deliveries");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+      @FXML
+    private void navigateToDashboard() throws Exception {
+        try {
+            App.setRoot("delivery-dashboard");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

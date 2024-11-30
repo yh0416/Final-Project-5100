@@ -36,7 +36,7 @@ public class DeliveriesController {
     @FXML private TableColumn<Delivery, String> pickupLocationColumn;
     @FXML private TableColumn<Delivery, String> deliveryAddressColumn;
     @FXML private TableColumn<Delivery, String> deliveryStatusColumn;
-    @FXML private TableColumn<Delivery, Double> feeColumn;
+    @FXML private TableColumn<Delivery, Double> deliveryFeeColumn;
     @FXML private TableColumn<Delivery, Double> createdAtColumn;
     @FXML private ComboBox<String> filterByStatusDropdown;
     @FXML private TextField searchTextField;
@@ -69,7 +69,7 @@ public class DeliveriesController {
         pickupLocationColumn.setCellValueFactory(new PropertyValueFactory<>("pickupLocation"));
         deliveryAddressColumn.setCellValueFactory(new PropertyValueFactory<>("customerAddress"));
         deliveryStatusColumn.setCellValueFactory(new PropertyValueFactory<>("deliveryStatus"));
-        feeColumn.setCellValueFactory(new PropertyValueFactory<>("deliveryFee"));
+        deliveryFeeColumn.setCellValueFactory(new PropertyValueFactory<>("deliveryFee"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
         
         List<Delivery> latestDeliveries = getDeliveries();
