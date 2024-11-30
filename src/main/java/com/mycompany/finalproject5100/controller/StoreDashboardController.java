@@ -83,7 +83,7 @@ public class StoreDashboardController {
         ResultSet salesRs = db.fetch(salesQuery);
         if (salesRs.next()) {
             double totalSales = salesRs.getDouble("total");
-            totalSalesLabel.setText(String.format("$%.2f", totalSales));
+//            totalSalesLabel.setText(String.format("$%.2f", totalSales));
         }
     }
 
