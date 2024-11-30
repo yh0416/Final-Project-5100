@@ -1,11 +1,11 @@
-package com.mycompany.finalproject5100.controller;
+package com.mycompany.finalproject5100.controllers;
 
 import com.mycompany.finalproject5100.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
-import com.mycompany.finalproject5100.model.Order;
-import com.mycompany.finalproject5100.model.dbUtils;
+import com.mycompany.finalproject5100.models.Order;
+import com.mycompany.finalproject5100.models.dbUtils;
 import java.io.IOException;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;

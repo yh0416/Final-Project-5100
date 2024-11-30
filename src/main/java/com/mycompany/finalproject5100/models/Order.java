@@ -1,4 +1,4 @@
-package com.mycompany.finalproject5100.model;
+package com.mycompany.finalproject5100.models;
 
 public class Order {
     private String orderId;  // Changed to String to match your original implementation

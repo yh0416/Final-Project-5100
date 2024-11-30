@@ -20,7 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  *
  * @author kiara
  */
-public class DashboardController {
+public class DeliveryDashboardController {
     @FXML private Label totalDeliveriesLabel;
     @FXML private Label deliveredOrdersLabel;
     @FXML private Label pendingDeliveriesLabel;

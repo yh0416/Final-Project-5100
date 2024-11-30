@@ -9,7 +9,7 @@
 
 <HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.mycompany.finalproject5100.controller.SignUpController"
+      fx:controller="com.mycompany.finalproject5100.controllers.SignUpController"
       styleClass="main-container">
     
     <!-- Left side - Image -->
