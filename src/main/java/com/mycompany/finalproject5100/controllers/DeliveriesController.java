@@ -6,6 +6,10 @@ package com.mycompany.finalproject5100.controllers;
 
 import com.mycompany.finalproject5100.models.Delivery;
 import com.mycompany.finalproject5100.models.dbUtils;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 
 /**
  *
@@ -41,7 +46,11 @@ public class DeliveriesController {
     @FXML 
     public void initialize(){
         try{
-        
+            //enable sorting for columns- javafx does this automatically
+            deliveryAddressColumn.setSortable(true);
+            pickupLocationColumn.setSortable(true);
+            deliveryStatusColumn.setSortable(true);
+            
             //populate table data
             populateDeliveries();
 
@@ -113,5 +122,42 @@ public class DeliveriesController {
                 }
             } 
             deliveriesTable.setItems(filteredDeliveries);
+   }
+   
+
+   
+//   download report
+   @FXML
+   public void downloadDeliveries(){
+       FileChooser fileChooser = new FileChooser();
+       fileChooser.setTitle("Save Deliveries Report");
+       fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel Files", "*excel"));
+       File file = fileChooser.showSaveDialog(null);
+       
+       if(file != null){
+           try(BufferedWriter   writer = new BufferedWriter(new FileWriter(file))){
+               // Write excel headers
+            writer.write("Delivery ID,Customer Name, Customer Phone Number,Pickup Location,Delivery Address,Status,Fee,Assigned To,Delivery Response,Date Requested");
+            writer.newLine();  
+            
+            //write data rows
+            for(Delivery delivery: deliveries){
+                writer.write(
+                    delivery.getId() + "," +
+                    delivery.getPickupLocation() + "," +
+                    delivery.getCustomerAddress()+ "," +
+                    delivery.getStatus() + "," +
+                    delivery.getFeeEarned() + "," +
+                    delivery.getCreatedAt()
+                );
+                writer.newLine();
+            }
+               System.out.println("Deliveries downloaded successfully");
+             
+           }catch(IOException e){
+              e.printStackTrace();
+               System.out.println("Failed to download report");
+           }
+       }
    }
 }

@@ -33,7 +33,6 @@ CREATE TABLE orders (
     customerPhone VARCHAR(20) NOT NULL,
     customerAddress VARCHAR(255) NOT NULL,
     deliveryFee DOUBLE NOT NULL,
-    status VARCHAR(50),  
     deliveryStatus VARCHAR(50),
     deliveryResponse VARCHAR(255), 
     deliveryTime VARCHAR(100),
