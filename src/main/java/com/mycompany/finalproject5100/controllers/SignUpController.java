@@ -1,7 +1,7 @@
-package com.mycompany.finalproject5100.controller;
+package com.mycompany.finalproject5100.controllers;
 
 import com.mycompany.finalproject5100.App;
-import com.mycompany.finalproject5100.model.User;
+import com.mycompany.finalproject5100.models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;

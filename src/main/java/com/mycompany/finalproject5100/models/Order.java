@@ -1,7 +1,7 @@
-package com.mycompany.finalproject5100.model;
+package com.mycompany.finalproject5100.models;
 
 public class Order {
-    private String orderId;  // Changed to String to match your original implementation
+    private String orderId;
     private String customer;
     private String status;
     private double total;

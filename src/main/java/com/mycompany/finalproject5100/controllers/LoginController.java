@@ -1,10 +1,10 @@
-package com.mycompany.finalproject5100.controller;
+package com.mycompany.finalproject5100.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import com.mycompany.finalproject5100.App;
-import com.mycompany.finalproject5100.model.User;
-import com.mycompany.finalproject5100.model.SessionManager;
+import com.mycompany.finalproject5100.models.User;
+import com.mycompany.finalproject5100.models.SessionManager;
 
 public class LoginController {
     @FXML private TextField emailField;
@@ -46,7 +46,7 @@ public class LoginController {
             System.out.println("Attempting to navigate to dashboard for role: " + role);
             
             // Navigate to appropriate dashboard
-            String dashboard = role.toLowerCase().contains("store") ? "store_dashboard" : "delivery_dashboard";
+            String dashboard = role.toLowerCase().contains("store") ? "store-dashboard" : "delivery-dashboard";
             App.setRoot(dashboard);
             
         } catch (Exception e) {

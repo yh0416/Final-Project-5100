@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.finalproject5100.model;
+package com.mycompany.finalproject5100.models;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,14 +11,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 /**
  *
- * @author lenovo
+ * @author kiara
  */
 public class dbUtils {
-     private static dbUtils instance;
+    private static dbUtils instance;
     private Connection connection;
-private String url = "jdbc:mysql://localhost:8000/flowcart";
-private String username = "root";
-private String password = "admin";
+    private String url = "jdbc:mysql://localhost:8000/flowcart";
+    private String username = "root";
+    private String password = "admin";
     
     private dbUtils() throws SQLException {
         try{

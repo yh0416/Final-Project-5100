@@ -9,7 +9,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.mycompany.finalproject5100.controller.LoginController"
+      fx:controller="com.mycompany.finalproject5100.controllers.LoginController"
       styleClass="main-container"
       prefWidth="1200"
       prefHeight="800">

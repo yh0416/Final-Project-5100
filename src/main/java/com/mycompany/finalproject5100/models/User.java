@@ -1,4 +1,4 @@
-package com.mycompany.finalproject5100.model;
+package com.mycompany.finalproject5100.models;
 
 public class User {
     private String username;

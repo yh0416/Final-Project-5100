@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="474.0" prefWidth="792.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controller.StoreDashboardController">
+<BorderPane prefHeight="474.0" prefWidth="792.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.StoreDashboardController">
    <left>
       <VBox prefHeight="474.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
          <padding>
