@@ -30,6 +30,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.poi.ss.usermodel.Cell;
@@ -225,7 +226,7 @@ public class DeliveriesController {
    private void showDeliveryDetails(DeliveryModel delivery) throws SQLException{
        try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/finalproject5100/delivery-details.fxml"));
-           Parent root = loader.load();
+           Parent deliveryDetailsRoot = loader.load();
            //fetch full delivery details from the db
            DeliveryService ds = new DeliveryService();
            DeliveryModel fullDeliveryDetails  = ds.getFullDeliveryDetails(delivery.getId());
@@ -236,8 +237,11 @@ public class DeliveriesController {
            controller.setDelivery(fullDeliveryDetails);
            
            //navigate to delivery details page
-           Stage stage = (Stage) deliveriesTable.getScene().getWindow();
-           stage.setScene(new Scene(root));
+            BorderPane root = (BorderPane) deliveriesTable.getScene().getRoot(); // Get the existing root
+              root.setCenter(deliveryDetailsRoot);
+//           Stage stage = (Stage) deliveriesTable.getScene().getWindow();
+//           stage.setScene(new Scene(root));
+//           stage.show();
            
        }catch(IOException e){
            e.printStackTrace();

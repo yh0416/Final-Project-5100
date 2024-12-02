@@ -54,9 +54,9 @@ CREATE TABLE order_items(
 
 CREATE TABLE delivery_timeline (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    orderId INT NOT NULL,
+    deliveryId INT NOT NULL,
     status VARCHAR(50) NOT NULL,
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-    deliveryResponse VARCHAR(255) DEFAULT NULL,
-    FOREIGN KEY (orderId) REFERENCES orders(id)
+    notes VARCHAR(255) DEFAULT NULL,
+    FOREIGN KEY (deliveryId) REFERENCES orders(id)
 );

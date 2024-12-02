@@ -48,27 +48,47 @@ public class DeliveryService {
     }
     
     public DeliveryModel getFullDeliveryDetails(int deliveryId) throws SQLException {
-    String query = "SELECT * FROM orders WHERE id = ?";
-    ResultSet rs = dbUtils.getInstance().fetch(query, deliveryId);
+        String query = "SELECT * FROM orders WHERE id = ?";
+        ResultSet rs = dbUtils.getInstance().fetch(query, deliveryId);
 
-    if (rs.next()) {
-        return new DeliveryModel(
-            rs.getInt("id"),
-            rs.getString("customerAddress"),
-            rs.getString("storeAddress"),
-            rs.getString("deliveryStatus"),
-            rs.getDouble("deliveryFee"),
-            rs.getTimestamp("createdAt"),
-            rs.getString("customerName"),
-            rs.getString("customerPhone"),
-            rs.getString("assignedTo"),
-            rs.getString("deliveryResponse"),
-            rs.getString("deliveryNotes"),
-            rs.getString("expectedDeliveryTime")
-        );
+        if (rs.next()) {
+            return new DeliveryModel(
+                rs.getInt("id"),
+                rs.getString("customerAddress"),
+                rs.getString("storeAddress"),
+                rs.getString("deliveryStatus"),
+                rs.getDouble("deliveryFee"),
+                rs.getTimestamp("createdAt"),
+                rs.getString("customerName"),
+                rs.getString("customerPhone"),
+                rs.getString("assignedTo"),
+                rs.getString("deliveryResponse"),
+                rs.getString("deliveryNotes"),
+                rs.getString("expectedDeliveryTime")
+            );
+        }
+
+        return null;
+    } 
+    
+//    timeline logic
+    public List<DeliveryTimelineModel> getTimelineEntries(int deliveryId) throws SQLException{
+        String query = "SELECT * FROM delivery_timeline WHERE deliveryId =? ORDER BY timestamp ASC";
+        ResultSet rs = dbUtils.getInstance().fetch(query, deliveryId);
+        List<DeliveryTimelineModel> timeline = new ArrayList<>();
+        while(rs.next()){
+            timeline.add(new DeliveryTimelineModel(
+                    rs.getString("status"),
+                    rs.getTimestamp("timestamp"),
+                    rs.getString("notes")
+            ));
+        }
+        return timeline;
     }
     
-    return null;
-}
+    public void addTimelineEntry(int deliveryId, String status, String notes) throws SQLException{
+        String query = "INSERT INTO delivery_timeline (deliveryId, status, notes) VALUES (?,?,?)";
+        dbUtils.getInstance().save(query, deliveryId, status, notes);
+    }
 
 }

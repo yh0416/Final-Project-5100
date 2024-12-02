@@ -229,3 +229,47 @@
 .stat-card:hover {
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 6);
 }
+
+
+.tab-pane {
+    -fx-background-color: #f4f4f4; 
+    -fx-padding: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+}
+
+/* Styling for Tab Headers */
+.tab-pane .tab-header-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: transparent; 
+    -fx-padding: 10 15; 
+    -fx-font-size: 14px; 
+    -fx-font-weight: bold;
+    -fx-text-fill: #666666;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #53a8b6; /* Active tab background color */
+    -fx-text-fill: black;
+    -fx-border-radius: 10 10 0 0; 
+    -fx-background-radius: 10 10 0 0;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #d9f1f6; /* Light hover effect */
+    -fx-text-fill: #53a8b6; /* Highlighted text */
+}
+
+
+.tab-pane .tab-content-area {
+    -fx-background-color: #ffffff; /* Content area background */
+    -fx-padding: 20; /* Padding inside the content area */
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10; /* Rounded content area */
+}

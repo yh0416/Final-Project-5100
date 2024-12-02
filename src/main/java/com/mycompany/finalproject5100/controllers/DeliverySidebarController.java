@@ -36,6 +36,7 @@ public class DeliverySidebarController {
     @FXML
     private void navigateToDashboard() throws Exception {
         try {
+            System.out.println("Navigating to Dashboard");
             App.setRoot("delivery-dashboard");
         } catch (IOException e) {
             e.printStackTrace();
