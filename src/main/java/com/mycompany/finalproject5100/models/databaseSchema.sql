@@ -35,7 +35,9 @@ CREATE TABLE orders (
     deliveryFee DOUBLE NOT NULL,
     deliveryStatus VARCHAR(50),
     deliveryResponse VARCHAR(255), 
-    deliveryTime VARCHAR(100),
+    deliveryNotes VARCHAR(255),
+    expectedDeliveryTime INT,
+    storeAddress VARCHAR(255),
     assignedTo VARCHAR(100), 
     createdBy VARCHAR(100),
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP

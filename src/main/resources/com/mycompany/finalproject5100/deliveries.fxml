@@ -3,31 +3,25 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="474.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.finalproject5100.controllers.DeliveriesController">
+<BorderPane prefHeight="765.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.finalproject5100.controllers.DeliveriesController">
    <left>
-      <VBox prefHeight="474.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-         <children>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #FFFFFF;" text="Deliveries" />
-         </children>
-      </VBox>
+       <fx:include source="delivery-sidebar.fxml" />
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="508.0" prefWidth="795.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#downloadDeliveries" prefHeight="44.0" prefWidth="161.0" style="-fx-background-radius: 10; -fx-background-color: #53a8b6;" text="Download Deliveries">
+                  <Button mnemonicParsing="false" onAction="#downloadDeliveries" prefHeight="44.0" prefWidth="161.0" style="-fx-background-radius: 10; -fx-background-color: #53a8b6;" text="Download Excel">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -63,17 +57,17 @@
             </HBox>
             <TableView fx:id="deliveriesTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                  <TableColumn fx:id="orderIdColumn" prefWidth="92.0" text="Delivery ID" />
-                  <TableColumn fx:id="pickupLocationColumn" prefWidth="128.0" text="Pickup Location" />
-                  <TableColumn fx:id="deliveryAddressColumn" prefWidth="129.0" text="Delivery Address" />
-                  <TableColumn fx:id="deliveryStatusColumn" prefWidth="81.0" text="Status" />
-                  <TableColumn fx:id="deliveryFeeColumn" minWidth="0.0" prefWidth="72.0" text="Fee" />
-                  <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="137.0" text="Date Requested" />
+                  <TableColumn fx:id="orderIdColumn" prefWidth="120.0" text="Delivery ID" />
+                  <TableColumn fx:id="storeAddressColumn" prefWidth="150.0" text="Store Address" />
+                  <TableColumn fx:id="deliveryAddressColumn" prefWidth="150.0" text="Delivery Address" />
+                  <TableColumn fx:id="deliveryStatusColumn" prefWidth="100.0" text="Status" />
+                  <TableColumn fx:id="deliveryFeeColumn" minWidth="0.0" prefWidth="150.0" text="Delivery Fee" />
+                  <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="150.0" text="Date Requested" />
               </columns>
             </TableView>
          </children>
          <BorderPane.margin>
-            <Insets top="40.0" />
+            <Insets left="30.0" right="20.0" top="40.0" />
          </BorderPane.margin>
       </VBox>
    </center>

@@ -6,7 +6,9 @@ module com.mycompany.finalproject5100 {
     requires java.sql;
     requires mysql.connector.j;
 
-
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
+    
     opens com.mycompany.finalproject5100 to javafx.fxml;
     opens com.mycompany.finalproject5100.controllers to javafx.fxml;
     opens com.mycompany.finalproject5100.models to javafx.base;

@@ -5,7 +5,7 @@
 package com.mycompany.finalproject5100.controllers;
 
 import com.mycompany.finalproject5100.App;
-import com.mycompany.finalproject5100.models.Delivery;
+import com.mycompany.finalproject5100.models.DeliveryModel;
 import com.mycompany.finalproject5100.models.dbUtils;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -26,14 +26,14 @@ public class DeliveryDashboardController {
     @FXML private Label totalDeliveriesLabel;
     @FXML private Label deliveredOrdersLabel;
     @FXML private Label pendingDeliveriesLabel;
-    @FXML private TableView<Delivery> latestDeliveriesTable;
-    @FXML private TableColumn<Delivery, Integer> orderIdColumn;
-    @FXML private TableColumn<Delivery, String> customerNameColumn;
-    @FXML private TableColumn<Delivery, String> deliveryAddressColumn;
-    @FXML private TableColumn<Delivery, String> statusColumn;
-    @FXML private TableColumn<Delivery, Double> feeColumn;
-    @FXML private TableColumn<Delivery, Double> assignedToColumn;
-    @FXML private TableColumn<Delivery, Double> createdAtColumn;
+    @FXML private TableView<DeliveryModel> latestDeliveriesTable;
+    @FXML private TableColumn<DeliveryModel, Integer> orderIdColumn;
+    @FXML private TableColumn<DeliveryModel, String> customerNameColumn;
+    @FXML private TableColumn<DeliveryModel, String> deliveryAddressColumn;
+    @FXML private TableColumn<DeliveryModel, String> statusColumn;
+    @FXML private TableColumn<DeliveryModel, Double> feeColumn;
+    @FXML private TableColumn<DeliveryModel, Double> assignedToColumn;
+    @FXML private TableColumn<DeliveryModel, Double> createdAtColumn;
 
     
     @FXML 
@@ -60,19 +60,19 @@ public class DeliveryDashboardController {
         assignedToColumn.setCellValueFactory(new PropertyValueFactory<>("assignedTo"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
         
-        List<Delivery> latestDeliveries = getLatestDeliveries();
+        List<DeliveryModel> latestDeliveries = getLatestDeliveries();
         latestDeliveriesTable.getItems().setAll(latestDeliveries);
     }
 
     //get latest deliveries
-    public List<Delivery> getLatestDeliveries() throws SQLException{
+    public List<DeliveryModel> getLatestDeliveries() throws SQLException{
        dbUtils db = dbUtils.getInstance(); 
        String query = "SELECT * FROM orders WHERE deliveryStatus IS NOT NULL ORDER BY createdAt DESC LIMIT 10";
        ResultSet rs = db.fetch(query);
        
-       List<Delivery> deliveries = new ArrayList<>();
+       List<DeliveryModel> deliveries = new ArrayList<>();
        while(rs.next()){
-           deliveries.add(new Delivery(
+           deliveries.add(new DeliveryModel(
                rs.getInt("id"),
                rs.getString("customerName"),
                rs.getString("customerAddress"),
@@ -108,32 +108,6 @@ public class DeliveryDashboardController {
         return rs.next()?rs.getInt("total"):0;
     }
     
-    @FXML
-    private void handleLogout() throws Exception {
-        try {
-            App.setRoot("login");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
- 
-    }
-    
-     @FXML
-    private void navigateToDeliveries() throws Exception {
-        try {
-            App.setRoot("deliveries");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-      @FXML
-    private void navigateToDashboard() throws Exception {
-        try {
-            App.setRoot("delivery-dashboard");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     
 }

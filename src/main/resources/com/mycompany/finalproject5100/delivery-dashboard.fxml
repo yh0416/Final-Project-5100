@@ -12,17 +12,7 @@
 
 <BorderPane prefHeight="474.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.finalproject5100.controllers.DeliveryDashboardController">
    <left>
-      <VBox prefHeight="474.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-         <children>
-            <Button onAction="#navigateToDashboard" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
-            <Button onAction="#navigateToDeliveries" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #FFFFFF;" text="Deliveries" />
-            <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
-        style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />
-         </children>
-      </VBox>
+      <fx:include source="delivery-sidebar.fxml" />
    </left>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
