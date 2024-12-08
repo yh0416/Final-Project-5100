@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-
+<!-- Added Back button and updated layout for Products page -- > 
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.ProductsController">
     <top>
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
