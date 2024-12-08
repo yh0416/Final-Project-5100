@@ -1,5 +1,7 @@
 package com.mycompany.finalproject5100.controllers;
 
+
+
 import com.mycompany.finalproject5100.App;
 import com.mycompany.finalproject5100.models.Product;
 import com.mycompany.finalproject5100.models.dbUtils;
@@ -24,7 +26,9 @@ public class ProductsController {
     @FXML private TableColumn<Product, String> productNameColumn;
     @FXML private TableColumn<Product, Double> productPriceColumn;
     @FXML private TableColumn<Product, Integer> productStockColumn;
-    @FXML private Button productsButton; // Button for dynamic styling
+    @FXML private Button productsButton; // Button for dynamic stylingg <!-- Added Back button and updated layout for Products page --> 
+    
+    
 
     private ObservableList<Product> products = FXCollections.observableArrayList();
 
@@ -38,6 +42,7 @@ public class ProductsController {
             alert.showAndWait();
         }
     }
+    
 
     @FXML
     private void handleAddProduct() {
