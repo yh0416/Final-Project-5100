@@ -83,12 +83,11 @@ public class StoreDashboardController {
         ResultSet salesRs = db.fetch(salesQuery);
         if (salesRs.next()) {
             double totalSales = salesRs.getDouble("total");
-//            totalSalesLabel.setText(String.format("$%.2f", totalSales));
         }
     }
 
     private void populateLatestOrders() throws SQLException {
-        dbUtils db = dbUtils.getInstance(); // Use the getInstance method
+        dbUtils db = dbUtils.getInstance();
         String query = "SELECT * FROM orders ORDER BY createdAt DESC LIMIT 10";
         ResultSet rs = db.fetch(query);
 
@@ -106,30 +105,39 @@ public class StoreDashboardController {
         ordersTable.getItems().setAll(orders);
     }
 
-  @FXML
-private void handleAddProduct() throws Exception {
-    try {
-        App.setRoot("add_product"); // You'll need to create this FXML
-    } catch (IOException e) {
-        e.printStackTrace();
+    @FXML
+    private void handleAddProduct() throws Exception {
+        try {
+            App.setRoot("add_product");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
 
-@FXML
-private void handleCreateOrder() throws Exception {
-    try {
-        App.setRoot("create_order"); // You'll need to create this FXML
-    } catch (IOException e) {
-        e.printStackTrace();
+    @FXML
+    private void handleCreateOrder() throws Exception {
+        try {
+            App.setRoot("create_order");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
 
-@FXML
-private void handleLogout() throws Exception {
-    try {
-        App.setRoot("login");
-    } catch (IOException e) {
-        e.printStackTrace();
+    @FXML
+    private void handleViewProducts() throws Exception {
+        try {
+            App.setRoot("products");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
+
+    @FXML
+    private void handleLogout() throws Exception {
+        try {
+            App.setRoot("login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

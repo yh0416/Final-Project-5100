@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.ProductsController">
+    <top>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Button fx:id="productsButton" text="Back" onAction="#handleBack" />
+            <Button text="Add Product" onAction="#handleAddProduct" />
+            <Button text="Delete Product" onAction="#handleDeleteProduct" />
+            <Button text="Export Products" onAction="#handleExportProducts" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="productsTable">
+            <columns>
+                <TableColumn fx:id="productIdColumn" text="ID" />
+                <TableColumn fx:id="productNameColumn" text="Name" />
+                <TableColumn fx:id="productPriceColumn" text="Price" />
+                <TableColumn fx:id="productStockColumn" text="Stock" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

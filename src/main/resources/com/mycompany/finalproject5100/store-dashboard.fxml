@@ -18,10 +18,12 @@
          </padding>
          <children>
             <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #FFFFFF;" text="Orders" />
-         <VBox VBox.vgrow="ALWAYS" />
-         <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
-        style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />
+            <Button mnemonicParsing="false" onAction="#handleViewProducts" prefHeight="36.0" prefWidth="130.0" 
+                    style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" />
+            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #53a8b6;" text="Orders" />
+            <VBox VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
+                    style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />
          </children>
       </VBox>
    </left>
@@ -40,11 +42,6 @@
                <children>
                   <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="70.0" prefWidth="150.0" style="-fx-background-radius: 15; -fx-background-color: #bbe4e9;">
                      <children>
-<!--                        <Label fx:id="totalSalesLabel" text="$1000">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>-->
                         <Label text="Total Sales" />
                      </children>
                      <padding>

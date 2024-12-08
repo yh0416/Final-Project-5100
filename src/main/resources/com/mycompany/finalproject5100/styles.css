@@ -273,3 +273,72 @@
     -fx-border-width: 1px;
     -fx-border-radius: 10; /* Rounded content area */
 }
+
+/* General Button Styles */
+.button {
+    -fx-background-color: #53a8b6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10 20;
+}
+
+.button:hover {
+    -fx-background-color: #79c2d0;
+}
+
+/* TableView Styles */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+/* Label Styling */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* Back Button */
+.back-button {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #666;
+    -fx-border-radius: 8;
+}
+
+.back-button:hover {
+    -fx-background-color: #dcdcdc;
+}
+/* Add active button styles */
+.button-active {
+    -fx-background-color: #79c2d0; /* Active background color */
+    -fx-text-fill: white; /* Active text color */
+    -fx-font-weight: bold;
+}
+
+/* Button hover effect */
+.button:hover {
+    -fx-background-color: #53a8b6;
+    -fx-text-fill: white;
+}
+/* Sidebar Button Styles */
+.sidebar-button {
+    -fx-background-color: #FFFFFF; /* Default button color */
+    -fx-border-radius: 10px;
+    -fx-text-fill: #666666;
+    -fx-font-size: 16px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #f0f9fa; /* Light hover effect */
+}
+
+/* Active Products Button Style */
+.sidebar-button-active {
+    -fx-background-color: #53a8b6; /* Active button color */
+    -fx-text-fill: white; /* Text color for active button */
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px;
+}
