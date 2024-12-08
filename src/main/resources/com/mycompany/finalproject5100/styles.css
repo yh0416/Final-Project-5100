@@ -274,6 +274,7 @@
     -fx-border-radius: 10; /* Rounded content area */
 }
 
+/*Fixed button colors and styled Products
 /* General Button Styles */
 .button {
     -fx-background-color: #53a8b6;
@@ -335,7 +336,7 @@
     -fx-background-color: #f0f9fa; /* Light hover effect */
 }
 
-/* Active Products Button Style */
+/* Active Products Buttonn Style */
 .sidebar-button-active {
     -fx-background-color: #53a8b6; /* Active button color */
     -fx-text-fill: white; /* Text color for active button */
