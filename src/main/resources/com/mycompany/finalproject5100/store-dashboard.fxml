@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="474.0" prefWidth="792.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.StoreDashboardController">
+<BorderPane prefHeight="474.0" prefWidth="792.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.StoreDashboardController">
    <left>
       <VBox prefHeight="474.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
          <padding>
@@ -20,8 +20,8 @@
              <!-- This button navigates to the Products page -->
             <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
             <Button mnemonicParsing="false" onAction="#handleViewProducts" prefHeight="36.0" prefWidth="130.0" 
-                    style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" /> 
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #53a8b6;" text="Orders" />
+                    style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" />          
+                    <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #53a8b6;" text="Orders" />
             <VBox VBox.vgrow="ALWAYS" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
                     style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />

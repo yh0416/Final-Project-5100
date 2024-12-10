@@ -4,10 +4,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<!-- Added Back button and updated layout for Products page -- > 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.ProductsController">
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.finalproject5100.controllers.ProductsController">
     <top>
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
             <Button fx:id="productsButton" text="Back" onAction="#handleBack" />
@@ -17,13 +20,24 @@
         </HBox>
     </top>
     <center>
-        <TableView fx:id="productsTable">
-            <columns>
-                <TableColumn fx:id="productIdColumn" text="ID" />
-                <TableColumn fx:id="productNameColumn" text="Name" />
-                <TableColumn fx:id="productPriceColumn" text="Price" />
-                <TableColumn fx:id="productStockColumn" text="Stock" />
-            </columns>
-        </TableView>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+            <TableView fx:id="productsTable">
+                <columns>
+                    <TableColumn fx:id="productIdColumn" text="ID" />
+                    <TableColumn fx:id="productNameColumn" text="Name" />
+                    <TableColumn fx:id="productPriceColumn" text="Price" />
+                    <TableColumn fx:id="productStockColumn" text="Stock" />
+                </columns>
+            </TableView>
+            
+            <!-- Product Form (like the design you showed) -->
+            <VBox spacing="10" alignment="CENTER">
+                <TextField fx:id="productNameField" promptText="Product Name" />
+                <TextField fx:id="productPriceField" promptText="Product Price" />
+                <TextField fx:id="productStockField" promptText="Product Stock" />
+                <Button text="Submit Product" onAction="#handleSubmitProduct" style="-fx-background-color: #53a8b6; -fx-text-fill: white;"/>
+            </VBox>
+        </VBox>
     </center>
 </BorderPane>
+

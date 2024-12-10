@@ -1,7 +1,5 @@
 package com.mycompany.finalproject5100.controllers;
 
-
-
 import com.mycompany.finalproject5100.App;
 import com.mycompany.finalproject5100.models.Product;
 import com.mycompany.finalproject5100.models.dbUtils;
@@ -9,10 +7,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.stage.FileChooser;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import javafx.stage.FileChooser; 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,10 +23,11 @@ public class ProductsController {
     @FXML private TableColumn<Product, String> productNameColumn;
     @FXML private TableColumn<Product, Double> productPriceColumn;
     @FXML private TableColumn<Product, Integer> productStockColumn;
-    @FXML private Button productsButton; // Button for dynamic stylingg <!-- Added Back button and updated layout for Products page --> 
+        @FXML private Button productsButton; 
+    @FXML private TextField productNameField;
+    @FXML private TextField productPriceField;
+    @FXML private TextField productStockField;
     
-    
-
     private ObservableList<Product> products = FXCollections.observableArrayList();
 
     @FXML
@@ -42,12 +40,16 @@ public class ProductsController {
             alert.showAndWait();
         }
     }
-    
 
     @FXML
     private void handleAddProduct() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Add Product functionality not implemented yet!");
-        alert.showAndWait();
+        try {
+            App.setRoot("add_product");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Error navigating to Add Product page.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -121,22 +123,16 @@ public class ProductsController {
 
     @FXML
     public void initialize() {
-        // Bind columns to Product model properties
         productIdColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         productNameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         productPriceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
         productStockColumn.setCellValueFactory(cellData -> cellData.getValue().stockProperty().asObject());
 
-        // Load products into the table
         loadProducts();
-
-        // Set active button color
-        if (productsButton != null) {
-            productsButton.getStyleClass().add("button-active");
-        }
     }
 
     private void loadProducts() {
+        products.clear();
         try {
             dbUtils db = dbUtils.getInstance();
             String query = "SELECT * FROM products";
@@ -150,10 +146,40 @@ public class ProductsController {
                         rs.getInt("stock")
                 ));
             }
-
             productsTable.setItems(products);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleSubmitProduct() {
+        String productName = productNameField.getText();
+        String productPrice = productPriceField.getText();
+        String productStock = productStockField.getText();
+
+        if (productName.isEmpty() || productPrice.isEmpty() || productStock.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "All fields must be filled out.");
+            alert.showAndWait();
+        } else {
+            try {
+                dbUtils db = dbUtils.getInstance();
+                String query = "INSERT INTO products (productName, price, stock) VALUES (?, ?, ?)";
+                db.save(query, productName, Double.parseDouble(productPrice), Integer.parseInt(productStock));
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Product added successfully!");
+                alert.showAndWait();
+
+                productNameField.clear();
+                productPriceField.clear();
+                productStockField.clear();
+
+                loadProducts();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Error adding product!");
+                alert.showAndWait();
+            }
         }
     }
 }
