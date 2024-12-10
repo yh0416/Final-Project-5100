@@ -16,9 +16,9 @@ import java.sql.ResultSet;
 public class dbUtils {
     private static dbUtils instance;
     private Connection connection;
-    private String url = "jdbc:mysql://localhost:3306/flowcart";
+    private String url = "jdbc:mysql://localhost:8000/flowcart";
     private String username = "root";
-    private String password = "1234";
+    private String password = "admin";
     
     private dbUtils() throws SQLException {
         try{

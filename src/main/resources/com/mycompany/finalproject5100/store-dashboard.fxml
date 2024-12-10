@@ -17,11 +17,11 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <children>
-             <!-- This button navigates to the Products page -->
+             <!-- This button navigates to the Products pg -->
             <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
             <Button mnemonicParsing="false" onAction="#handleViewProducts" prefHeight="36.0" prefWidth="130.0" 
                     style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" />          
-                    <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #53a8b6;" text="Orders" />
+                   
             <VBox VBox.vgrow="ALWAYS" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
                     style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />

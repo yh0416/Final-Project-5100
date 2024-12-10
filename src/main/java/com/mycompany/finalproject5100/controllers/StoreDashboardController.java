@@ -117,7 +117,7 @@ public class StoreDashboardController {
     @FXML
     private void handleCreateOrder() throws Exception {
         try {
-            App.setRoot("create_order");
+            App.setRoot("create-order");
         } catch (IOException e) {
             e.printStackTrace();
         }
