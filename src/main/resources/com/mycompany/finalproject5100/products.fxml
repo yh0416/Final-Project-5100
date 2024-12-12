@@ -14,7 +14,6 @@
     <top>
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
             <Button fx:id="productsButton" text="Back" onAction="#handleBack" />
-            <Button text="Add Product" onAction="#handleAddProduct" />
             <Button text="Delete Product" onAction="#handleDeleteProduct" />
             <Button text="Export Products" onAction="#handleExportProducts" />
         </HBox>
@@ -30,7 +29,7 @@
                 </columns>
             </TableView>
             
-            <!-- Product Form (like the design you showed) -->
+            <!-- Product Form -->
             <VBox spacing="10" alignment="CENTER">
                 <TextField fx:id="productNameField" promptText="Product Name" />
                 <TextField fx:id="productPriceField" promptText="Product Price" />
@@ -40,4 +39,3 @@
         </VBox>
     </center>
 </BorderPane>
-
