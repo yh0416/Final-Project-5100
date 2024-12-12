@@ -20,7 +20,7 @@
                </VBox.margin>
             </Label>
              <Button mnemonicParsing="false" onAction="#navigateToDashboard" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#navigateToDeliveries" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #FFFFFF;" text="Deliveries" />
+            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#navigateToDeliveries" prefHeight="36.0" prefWidth="130.0" style="-fx-border-radius: 10px; -fx-background-color: #F0F0F0; -fx-text-fill: black;" text="Deliveries" />
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #bbe4e9;" text="Logout">
                <VBox.margin>
                   <Insets top="250.0" />

@@ -18,10 +18,10 @@
          </padding>
          <children>
              <!-- This button navigates to the Products pg -->
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
+            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" onAction="#handleDashboard" style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Dashboard" />
             <Button mnemonicParsing="false" onAction="#handleViewProducts" prefHeight="36.0" prefWidth="130.0" 
-                    style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" />          
-                   
+                    style="-fx-background-color: #53a8b6; -fx-border-radius: 10px;" text="Products" /> 
+           
             <VBox VBox.vgrow="ALWAYS" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="36.0" prefWidth="130.0" 
                     style="-fx-background-color: #79c2d0; -fx-text-fill: white;" text="Logout" />
@@ -114,12 +114,12 @@
                   <Button mnemonicParsing="false" onAction="#handleCreateOrder" style="-fx-background-color: #53a8b6; -fx-text-fill: white;" text="Create New Order" />
                </children>
             </HBox>
-            <TableView fx:id="ordersTable" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="ordersTable" prefHeight="200.0" prefWidth="700.0">
                <columns>
                   <TableColumn fx:id="orderIdColumn" prefWidth="92.0" text="Order ID" />
-                  <TableColumn fx:id="customerColumn" prefWidth="142.0" text="Customer" />
-                  <TableColumn fx:id="statusColumn" prefWidth="90.0" text="Status" />
-                  <TableColumn fx:id="totalColumn" minWidth="0.0" prefWidth="85.0" text="Total" />
+                  <TableColumn fx:id="customerNameColumn" prefWidth="142.0" text="Customer Name" />
+                  <TableColumn fx:id="deliveryStatusColumn" prefWidth="90.0" text="Status" />
+                  <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="85.0" text="Created At" />
                </columns>
                <VBox.margin>
                   <Insets top="20.0" />

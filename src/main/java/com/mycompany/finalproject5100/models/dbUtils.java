@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 /**
  *
  * @author kiara
@@ -66,4 +67,18 @@ public class dbUtils {
      public int delete(String query, Object...params)throws SQLException{
         return save(query,params);
     }
+     
+    public int saveAndGetId(String query, Object... params) throws SQLException {
+    PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+    for (int i = 0; i < params.length; i++) {
+        preparedStatement.setObject(i + 1, params[i]);
+    }
+    preparedStatement.executeUpdate();
+    ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+    if (generatedKeys.next()) {
+        return generatedKeys.getInt(1);
+    }
+    throw new SQLException("Failed to retrieve generated ID.");
+}
+
 }
